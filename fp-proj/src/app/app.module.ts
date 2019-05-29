@@ -10,6 +10,7 @@ import { ArticleListComponent } from './article-list/article-list.component';
 import { AdminComponent } from './admin/admin.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { AuthService } from './auth.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { AuthService } from './auth.service';
     NavigationComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule
   ],
