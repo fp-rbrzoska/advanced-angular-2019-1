@@ -12,6 +12,8 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { AuthService } from './auth.service';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AuthInterceptorService } from './auth-interceptor.service';
+import { ArticleTableComponent } from './article-table/article-table.component';
+import { ArticlesPaginationComponent } from './articles-pagination/articles-pagination.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { AuthInterceptorService } from './auth-interceptor.service';
     ArticleComponent,
     ArticleListComponent,
     AdminComponent,
-    NavigationComponent
+    NavigationComponent,
+    ArticleTableComponent,
+    ArticlesPaginationComponent
   ],
   imports: [
     HttpClientModule,
@@ -29,7 +33,7 @@ import { AuthInterceptorService } from './auth-interceptor.service';
     AppRoutingModule
   ],
   providers: [AuthService,
-    {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true}],
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -11,7 +11,7 @@ export class ArticlesService {
 
   constructor(private http: HttpClient) { }
 
-  getAllArticles$() {
+  getArticles$(page = 1, limit = 5) {
     return this.http.get<any[]>(`${apiUrl}/articles`, { });
   }
 }

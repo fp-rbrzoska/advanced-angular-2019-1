@@ -10,7 +10,7 @@ export class ArticleListComponent implements OnInit {
 
   articles = [];
   constructor(private articleService: ArticlesService) {
-    this.articleService.getAllArticles$().subscribe(a => this.articles = a)
+    this.articleService.getArticles$().subscribe(a => this.articles = a)
   }
 
   ngOnInit() {

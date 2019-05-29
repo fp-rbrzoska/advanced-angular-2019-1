@@ -1,0 +1,8 @@
+<div>
+  <div *ngFor="let article of articles" class="m-2 p-2">
+    <div class="avatar float-left mr-2"><img [src]="article.avatar"></div>
+    <div class="title">{{article.title}}</div>
+    <div class="description">{{article.description}}</div>
+    <div class="created">{{article.created | date}}</div>
+  </div>
+</div>
