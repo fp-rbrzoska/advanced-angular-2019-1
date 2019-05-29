@@ -1,2 +1,4 @@
-<app-article-table [articles]="articles"></app-article-table>
-<app-articles-pagination></app-articles-pagination>
+<app-article-table [articles]="articles.data"></app-article-table>
+<app-articles-pagination
+        (pageChange)="getNewPage($event)"
+        [totalPages]="articles.totalPages"></app-articles-pagination>

@@ -1,3 +1,6 @@
-<p>
-  articles-pagination works!
-</p>
+<div >
+  <a (click)="pageChange.emit(pageNumber)"
+          *ngFor="let pageNumber of pageNumbers"
+        class="m-2 p-2 btn btn-outline-danger"
+          style="display: inline-block">{{pageNumber}}</a>
+</div>

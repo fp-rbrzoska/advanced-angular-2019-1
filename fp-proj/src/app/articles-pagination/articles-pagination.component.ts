@@ -6,9 +6,14 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./articles-pagination.component.scss']
 })
 export class ArticlesPaginationComponent implements OnInit {
-
+  pageNumbers = [];
   @Input() initialPage;
-  @Input() totalPages;
+  @Input()
+  set totalPages(pages) {
+    for(let i = 1; i<= pages; i++) {
+      this.pageNumbers.push(i)
+    }
+  };
   @Output() pageChange = new EventEmitter<number>();
   constructor() { }
 
