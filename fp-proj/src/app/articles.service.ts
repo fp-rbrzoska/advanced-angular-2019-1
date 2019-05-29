@@ -12,6 +12,14 @@ export class ArticlesService {
   constructor(private http: HttpClient) { }
 
   getAllArticles$() {
-    return this.http.get<any[]>(`${apiUrl}/articles`);
+    return this.http.get<any[]>(`${apiUrl}/articles`, {
+      headers: {
+        Authorization: 'Bearer asdasdasdasdasdas'
+      },
+      params: {
+        test1: "1",
+        test2: "3"
+      }
+    });
   }
 }

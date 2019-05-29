@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 @Injectable()
 export class AuthService {
 
+  private _token: 'weiofhwehfuih3478yhf834hifh3489fh';
   constructor(private router: Router) {
 
   }
