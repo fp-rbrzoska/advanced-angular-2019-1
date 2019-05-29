@@ -1,3 +1,12 @@
+<div class="float-right">
+  <ng-container *ngIf="isLoggedIn$ | async as loggedIn; else loginBtn">
+    <button class="btn btn-danger" (click)="logOut()">Log Out</button>
+  </ng-container>
+  <ng-template #loginBtn>
+    <button class="btn btn-primary" (click)="logIn()" >Log In</button>
+  </ng-template>
+
+</div>
 <nav class="nav">
   <a class="nav-link" routerLink="/"
      [routerLinkActiveOptions]="{exact: true}"

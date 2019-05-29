@@ -1,21 +1,17 @@
 import { Injectable } from '@angular/core';
 import { AsyncSubject, BehaviorSubject, from, Observable, of, ReplaySubject, Subject } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Injectable()
 export class AuthService {
 
+  constructor(private router: Router) {
+
+  }
   private _isLoggedIn$ = new BehaviorSubject<boolean>(false);
 
   isLoggedIn$ = this._isLoggedIn$.asObservable();
-
-  logIn() {
-    this._isLoggedIn$.next(true);
-  }
-
-  logOut() {
-    this._isLoggedIn$.next(false);
-  }
 
 
   // demo
@@ -28,8 +24,18 @@ export class AuthService {
     obs.next(2);
     obs.complete();
   });
-  isLoggedInObs2$ = of(1, 2).pipe(map(x => x*2));
-  isLoggedInObs3$ = from([1,2]);
+  isLoggedInObs2$ = of(1, 2).pipe(map(x => x * 2));
+  isLoggedInObs3$ = from([1, 2]);
+
+  logIn() {
+    this._isLoggedIn$.next(true);
+  }
+
+  logOut() {
+    this._isLoggedIn$.next(false);
+    this.router.navigateByUrl('/')
+
+  }
 
 
 }
