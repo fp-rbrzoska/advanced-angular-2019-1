@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-article',
@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ArticleComponent implements OnInit {
 
-  constructor() { }
+  showFullArticle = false;
+  @Input() article;
+  constructor() {
+  }
 
   ngOnInit() {
+  }
+  toggle() {
+    this.showFullArticle = !this.showFullArticle;
   }
 
 }

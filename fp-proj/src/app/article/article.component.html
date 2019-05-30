@@ -1,3 +1,10 @@
-<p>
-  article works!
-</p>
+<div appHighlight="highlight"
+     #directive="highlightDirective"
+     class="m-2 p-2">
+  <div *ngIf="showFullArticle" class="avatar float-left mr-2"><img [src]="article.avatar"></div>
+  <h4  (click)="toggle()"class="title ">{{article.title}}</h4>
+  <div  *ngIf="showFullArticle" class="description">{{article.description}}</div>
+  <div  *ngIf="showFullArticle" class="created">{{article.created | date}}</div>
+
+  <button (click)="directive.changeBackground('red')">Change to red</button>
+</div>

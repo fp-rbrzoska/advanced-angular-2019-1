@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { AfterContentChecked, AfterViewInit, Component, Input, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import { ArticleComponent } from '../article/article.component';
 
 @Component({
   selector: 'app-article-table',
@@ -7,10 +8,18 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ArticleTableComponent implements OnInit {
 
+  @ViewChildren(ArticleComponent) articlesComponents: QueryList<ArticleComponent>;
   @Input() articles = [];
 
 
   ngOnInit() {
+  }
+
+
+  ngAfterViewInit(): void {
+    setTimeout(() => {
+      this.articlesComponents.first.toggle();
+    })
   }
 
 }

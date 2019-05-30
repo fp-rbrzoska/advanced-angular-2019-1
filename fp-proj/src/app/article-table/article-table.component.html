@@ -1,12 +1,3 @@
-<div>
-  <div appHighlight="highlight"
-       #directive="highlightDirective"
-       *ngFor="let article of articles" class="m-2 p-2">
-    <div class="avatar float-left mr-2"><img [src]="article.avatar"></div>
-    <div class="title">{{article.title}}</div>
-    <div class="description">{{article.description}}</div>
-    <div class="created">{{article.created | date}}</div>
-
-    <button (click)="directive.changeBackground('red')">Change to red</button>
-  </div>
+<div *ngFor="let article of articles">
+  <app-article [article]="article"></app-article>
 </div>

@@ -8,10 +8,7 @@ import { ArticlesService, Page } from '../articles.service';
 })
 export class ArticleListComponent implements OnInit {
 
-  articles:Page<any> = {
-    totalPages: 0,
-    data: []
-  };
+  articles:Page<any>;
   constructor(private articleService: ArticlesService) {
     this.articleService.getArticles$().subscribe(a => this.articles = a)
   }
