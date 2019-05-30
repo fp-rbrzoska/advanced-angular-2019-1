@@ -1,6 +1,23 @@
 <div >
-  <a (click)="pageChange.emit(pageNumber)"
+  <!--<a (click)="pageChange.emit(pageNumber)"
           *ngFor="let pageNumber of pageNumbers"
         class="m-2 p-2 btn btn-outline-danger"
           style="display: inline-block">{{pageNumber}}</a>
+
+  <ng-template ngFor [ngForOf]="pageNumbers" let-pageNumber>
+    <a (click)="pageChange.emit(pageNumber)"
+       class="m-2 p-2 btn btn-outline-danger"
+       style="display: inline-block">{{pageNumber}}</a>
+  </ng-template>
+-->
+  <a (click)="pageChange.emit(pageNumber)"
+     *ngRepeat="let pageNumber dupa pages; let m = multiplied"
+     class="m-2 p-2 btn btn-outline-danger"
+     style="display: inline-block">{{pageNumber}} {{m}}</a>
+
+<!--  <ng-template ngRepeat [ngRepeatDupa]="pages" let-pageNumber let-m="multiplied">-->
+<!--    <a (click)="pageChange.emit(pageNumber)"-->
+<!--       class="m-2 p-2 btn btn-outline-danger"-->
+<!--       style="display: inline-block">{{pageNumber}}{{m}}</a>-->
+<!--  </ng-template>-->
 </div>

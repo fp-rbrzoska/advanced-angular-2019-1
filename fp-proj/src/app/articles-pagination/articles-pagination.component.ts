@@ -7,9 +7,11 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class ArticlesPaginationComponent implements OnInit {
   pageNumbers = [];
+  pages;
   @Input() initialPage;
   @Input()
   set totalPages(pages) {
+    this.pages = pages;
     for(let i = 1; i<= pages; i++) {
       this.pageNumbers.push(i)
     }

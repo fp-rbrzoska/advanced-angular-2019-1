@@ -14,6 +14,8 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AuthInterceptorService } from './auth-interceptor.service';
 import { ArticleTableComponent } from './article-table/article-table.component';
 import { ArticlesPaginationComponent } from './articles-pagination/articles-pagination.component';
+import { NgRepeatDirective } from './ng-repeat.directive';
+import { HighlightDirective } from './highlight.directive';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { ArticlesPaginationComponent } from './articles-pagination/articles-pagi
     AdminComponent,
     NavigationComponent,
     ArticleTableComponent,
-    ArticlesPaginationComponent
+    ArticlesPaginationComponent,
+    NgRepeatDirective,
+    HighlightDirective
   ],
   imports: [
     HttpClientModule,
