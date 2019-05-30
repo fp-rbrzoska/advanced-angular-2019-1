@@ -16,6 +16,11 @@ import { ArticleTableComponent } from './article-table/article-table.component';
 import { ArticlesPaginationComponent } from './articles-pagination/articles-pagination.component';
 import { NgRepeatDirective } from './ng-repeat.directive';
 import { HighlightDirective } from './highlight.directive';
+import { ArticleFrameComponent } from './article-frame/article-frame.component';
+import { TextArticleComponent } from './text-article/text-article.component';
+import { ImageArticleComponent } from './image-article/image-article.component';
+import { NotificationComponent } from './notification/notification.component';
+import { NotificationContainerComponent } from './notification-container/notification-container.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +34,12 @@ import { HighlightDirective } from './highlight.directive';
     ArticleTableComponent,
     ArticlesPaginationComponent,
     NgRepeatDirective,
-    HighlightDirective
+    HighlightDirective,
+    ArticleFrameComponent,
+    TextArticleComponent,
+    ImageArticleComponent,
+    NotificationComponent,
+    NotificationContainerComponent
   ],
   imports: [
     HttpClientModule,
@@ -38,6 +48,7 @@ import { HighlightDirective } from './highlight.directive';
   ],
   providers: [AuthService,
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true}],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [NotificationComponent]
 })
 export class AppModule { }
