@@ -1,7 +1,8 @@
 import { Directive, ElementRef, HostListener, Input, Renderer2 } from '@angular/core';
 
 @Directive({
-  selector: '[appHighlight]'
+  selector: '[appHighlight]',
+  exportAs: 'highlightDirective'
 })
 export class HighlightDirective {
 
@@ -12,13 +13,17 @@ export class HighlightDirective {
   }
 
   @HostListener('mouseover')
-  onHover(){
+  onHoverDupa(){
     this.renderer.addClass(this.el.nativeElement, this.appHighlight)
   }
 
   @HostListener('mouseout')
-  onHoverOut() {
+  onHoverOutDupa() {
     this.renderer.removeClass(this.el.nativeElement, this.appHighlight)
+  }
+
+  changeBackground(color) {
+    this.renderer.setStyle(this.el.nativeElement, 'background', color)
   }
 
 }
